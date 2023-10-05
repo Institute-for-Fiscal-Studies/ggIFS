@@ -1,5 +1,7 @@
 ---
-output: html_document
+output:
+  github_document: default
+  html_document: default
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -10,7 +12,8 @@ knitr::opts_chunk$set(
   comment = "#>",
   fig.path = "man/figures/README-",
   out.width = "80%",
-  out.height = "80%"
+  out.height = "80%",
+  title = "ggIFS"
 )
 
 library(tidyverse)
@@ -37,8 +40,10 @@ You can install the development version of ggIFS from [GitHub](https://github.co
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("vedanthnair/ggIFS")
+devtools::install_github("Institute-for-Fiscal-Studies/ggIFS", auth_token = "INSERT_PAT_TOKEN")
 ```
+
+A PAT token is needed because ggIFS is a private repository. To get a PAT token, see <https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens>
 
 ## Examples
 
@@ -61,7 +66,7 @@ Without putting in any arguments, `scale_fill_ifs()` (we are using fill because 
 
 ```{r example2, fig.height= 3, fig.width = 5}
 
-ggplot(iris2) +
+ggplot(iris_clean) +
   geom_bar(aes(x = Species, y = value, fill = name), stat = "identity") +
   # theme_ifs() adds the theme elements
   theme_ifs() +
@@ -91,7 +96,7 @@ ggplot(iris_clean2) +
 We can choose a custom palette, e.g. greens. Palettes can be greens, greys, yellows, reds, blues, purples.
 
 ```{r example3, fig.height= 3, fig.width = 5}
-ggplot(iris2) +
+ggplot(iris_clean2) +
   geom_bar(aes(x = Species, y = value, fill = name), stat = "identity") +
   theme_ifs() +
   scale_fill_ifs(palette = "greens")
@@ -99,10 +104,10 @@ ggplot(iris2) +
 
 ### User-specified palette
 
-We can choose custom colour values, using the 'values' argument. The potential values are dark_X\_2, dark_X\_1, mid_X, light_X\_1, light_X\_2, light_X\_3, substituting X for green, grey, yellow, red, blue or purple (following the IFS naming convention).
+We can choose custom colour values, using the 'values' argument. The potential values are dark_X_2, dark_X_1, mid_X, light_X_1, light_X_2, light_X_3, substituting X for green, grey, yellow, red, blue or purple (following the IFS naming convention).
 
 ```{r example4, fig.height= 3, fig.width = 5}
-ggplot(iris2) +
+ggplot(iris_clean2) +
   geom_bar(aes(x = Species, y = value, fill = name), stat = "identity") +
   theme_ifs() +
   scale_fill_ifs(values = c("Petal.Length" = "dark_green_2", "Petal.Width" = "dark_purple_1", "Sepal.Length" = "mid_yellow", "Sepal.Width" = "light_grey_3"))
@@ -116,7 +121,7 @@ The `scale_fill_ifs` and `scale_colour_ifs` commands are designed to map to the 
 There are two options to get around this. The first is just to set `fill or colour = ""` in the `aes()` call, and then manually suppress the legend ggplot will try to create.
 
 ```{r , fig.height= 3, fig.width = 5}
-ggplot(iris2) +
+ggplot(iris_clean2) +
   geom_bar(aes(x = Species, y = value, fill = ""), stat = "identity") +
   theme_ifs() +
   theme(legend.position = "none") +
@@ -128,7 +133,7 @@ Alternatively, you can forget about using `scale_fill_ifs()` and just manually s
 
 ```{r eval=FALSE}
 # This will create the same code as above. 
-ggplot(iris2) +
+ggplot(iris_clean2) +
   geom_bar(aes(x = Species, y = value), fill = "#307E75", stat = "identity")+
   theme_ifs()
 ```
