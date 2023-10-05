@@ -172,7 +172,7 @@ scale_colour_ifs <- function(palette = "default", values = NA, gradient = FALSE,
   }
 
   if (gradient == FALSE) {
-    ggplot2::discrete_scale("colour", "ifs", ifs_pal_finder(direction = -1, desired_cols), ...)
+    ggplot2::discrete_scale("colour", "ifs", ifs_pal_finder(direction = 0, desired_cols), ...)
   } else if (gradient == TRUE) {
     ggplot2::scale_colour_gradientn(colours = desired_cols, ...)
   }
