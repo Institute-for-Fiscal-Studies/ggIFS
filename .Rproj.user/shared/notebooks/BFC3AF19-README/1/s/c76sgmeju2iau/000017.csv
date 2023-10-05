@@ -1,0 +1,5 @@
+"0","ggplot(iris2) +"
+"0","  geom_bar(aes(x = Species, y = value, fill = name), stat = ""identity"") +"
+"0","  theme_ifs() +"
+"0","  scale_fill_ifs(values = c(""Petal.Length"" = ""dark_green_2"", ""Petal.Width"" = ""dark_purple_1"", ""Sepal.Length"" = ""mid_yellow"", ""Sepal.Width"" = ""light_grey_3""))"
+"0",""

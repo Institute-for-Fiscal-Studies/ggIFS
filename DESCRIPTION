@@ -1,0 +1,17 @@
+Package: ggIFS
+Type: Package
+Title: Make IFS-themed graphs with ggplot2
+Version: 0.1.1
+Author: Vedanth Nair
+Maintainer: Vedanth Nair <vedanth.nair@ifs.org.uk>
+Description: Adds a custom theme, wrappers for scale_colour_manual and scale_fill_manual, and a wrapper for ggsave, to quickly create R graphics.3 
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    ggplot2,
+    stringr,
+    readr
+RoxygenNote: 7.1.2
+URL: https://github.com/vedanthnair/ggIFS
+BugReports: https://github.com/vedanthnair/ggIFS/issues

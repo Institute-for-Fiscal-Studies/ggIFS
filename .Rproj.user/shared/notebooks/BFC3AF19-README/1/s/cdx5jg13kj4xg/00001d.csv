@@ -1,0 +1,4 @@
+"0","# This will create the same code as above. "
+"0","ggplot(iris2) +"
+"0","  geom_bar(aes(x = Species, y = value), fill = ""#307E75"", stat = ""identity"")+"
+"0","  theme_ifs()"

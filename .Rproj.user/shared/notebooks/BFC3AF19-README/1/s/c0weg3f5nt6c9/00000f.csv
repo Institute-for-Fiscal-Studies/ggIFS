@@ -1,0 +1,6 @@
+"0",""
+"0","ggplot(iris2) +"
+"0","  geom_bar(aes(x = Species, y = value, fill = name), stat = ""identity"") +"
+"0","  theme_ifs() +"
+"0","  scale_fill_ifs(palette = ""greens"")"
+"0",""

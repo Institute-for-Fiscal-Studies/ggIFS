@@ -1,0 +1,5 @@
+"0","ggplot(iris) +"
+"0","  geom_point(aes(x = Sepal.Length, y = Sepal.Width, col = Petal.Width)) +"
+"0","  theme_ifs() +"
+"0","  scale_colour_ifs(palette = ""greens"", gradient = TRUE)"
+"0",""
