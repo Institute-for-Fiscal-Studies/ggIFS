@@ -34,12 +34,8 @@ You can install the development version of ggIFS from
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("Institute-for-Fiscal-Studies/ggIFS", auth_token = "INSERT_PAT_TOKEN")
+devtools::install_github("Institute-for-Fiscal-Studies/ggIFS")
 ```
-
-A PAT token is needed because ggIFS is a private repository. To get a
-PAT token, see
-<https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens>
 
 ## Examples
 
